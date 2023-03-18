@@ -8,10 +8,12 @@ void main() {
 class NotesApp extends StatelessWidget {
   const NotesApp ({Key? key}) : super(key: key);
   // This widget is the root of your application.
+
   @override
+
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
       ),

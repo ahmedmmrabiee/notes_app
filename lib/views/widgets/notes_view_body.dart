@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_tasks_app/views/widgets/custom_app_bar.dart';
+import 'package:todo_tasks_app/shared/components/custom_app_bar.dart';
 import 'package:todo_tasks_app/views/widgets/notes_list_view.dart';
 
 

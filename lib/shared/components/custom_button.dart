@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../const_color/constants.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton({Key? key}) : super(key: key);
 

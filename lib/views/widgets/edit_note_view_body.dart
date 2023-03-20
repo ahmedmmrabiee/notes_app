@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:todo_tasks_app/views/widgets/custom_app_bar.dart';
-import 'package:todo_tasks_app/views/widgets/custom_text_field.dart';
+import 'package:todo_tasks_app/shared/components/custom_app_bar.dart';
+import 'package:todo_tasks_app/shared/components/custom_text_field.dart';
 
 class EditNoteViewBody extends StatelessWidget {
   const EditNoteViewBody({Key? key}) : super(key: key);

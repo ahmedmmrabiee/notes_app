@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../constants.dart';
+import '../const_color/constants.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField({Key? key, required this.hintTitle,  this.maxLinesNum = 1}) : super(key: key);
 

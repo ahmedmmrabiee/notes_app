@@ -6,6 +6,7 @@ class SimpleBlocObserver implements BlocObserver {
 
   @override
   void onCreate(BlocBase bloc) {
+    debugPrint('create = $bloc');
     // super.onCreate(bloc);
     // print('onCreate -- bloc: ${bloc.runtimeType}');
   }
@@ -37,6 +38,7 @@ class SimpleBlocObserver implements BlocObserver {
 
   @override
   void onClose(BlocBase bloc) {
+    debugPrint('close = $bloc');
     // super.onClose(bloc);
     // print('onClose -- bloc: ${bloc.runtimeType}');
   }

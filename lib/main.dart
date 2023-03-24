@@ -7,6 +7,8 @@ import 'package:todo_tasks_app/shared/bloc_observer/simple_bloc_observer.dart';
 import 'package:todo_tasks_app/shared/const/constants.dart';
 import 'package:todo_tasks_app/views/notes_view.dart';
 
+import 'cubits/read_notes_from_hive_cubits/read_notes_cubit.dart';
+
 void main() async {
 
   await Hive.initFlutter();
@@ -26,14 +28,17 @@ class NotesApp extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.dark,
-      fontFamily:'Poppins',
-      ),
+    return BlocProvider(
+      create: (context) => ReadNotesCubit(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          brightness: Brightness.dark,
+        fontFamily:'Poppins',
+        ),
 
-      home: const NotesView(),
+        home: const NotesView(),
+      ),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:todo_tasks_app/cubits/add_note_cubits/add_note_cubit.dart';
 import 'package:todo_tasks_app/cubits/add_note_cubits/add_note_state.dart';
+import 'package:todo_tasks_app/cubits/read_notes_from_hive_cubits/read_notes_cubit.dart';
 
 import 'add_note_form.dart';
 class AddNoteBottomSheet extends StatelessWidget {
@@ -15,9 +16,10 @@ class AddNoteBottomSheet extends StatelessWidget {
       child: BlocConsumer<AddNoteCubit, AddNoteState>(
         listener: (context, state ){
           if(state is AddNoteFailure) {
-            //print('error in addNoteFailure ${state.errMessage}');
           }
           if (state is AddNoteSuccess){
+            //call ReadNotesCubit not addNotes to update the list view
+            BlocProvider.of<ReadNotesCubit>(context).fetchAllNotes();
             Navigator.pop(context);
           }
         },

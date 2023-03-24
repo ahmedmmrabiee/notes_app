@@ -1,4 +1,5 @@
 
+
 import 'package:bloc/bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:todo_tasks_app/models/note_model.dart';
@@ -13,5 +14,7 @@ class ReadNotesCubit extends Cubit <ReadNotesState> {
   fetchAllNotes(){
      var allNotesBox = Hive.box<NoteModel>(kNotesBox);
       dataNote = allNotesBox.values.toList();
+
+      emit(NotesUpdateSuccess());
 }
 }

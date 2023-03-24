@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import '../const/constants.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({Key? key, required this.hintTitle,  this.maxLinesNum = 1, this.onSaved}) : super(key: key);
+  const CustomTextField({Key? key, required this.hintTitle,  this.maxLinesNum = 1, this.onSaved, this.onChangedFunc, }) : super(key: key);
 
+  final void Function(String?)? onChangedFunc;
   final String hintTitle;
   final int maxLinesNum;
 
@@ -14,6 +15,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChangedFunc,
       onSaved: onSaved,
       validator: (value){
        if (value?.isEmpty ?? true){

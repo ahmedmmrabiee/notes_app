@@ -7,12 +7,11 @@ import 'read_notes_state.dart';
 
 class ReadNotesCubit extends Cubit <ReadNotesState> {
   ReadNotesCubit() : super(ReadNoteInitial());
-  fetchAllNotes() async {
 
-      var allNotesBox = Hive.box<NoteModel>(kNotesBox);
-      List<NoteModel> allNotes = allNotesBox.values.toList();
+  List<NoteModel>? dataNote ;
 
-      emit(ReadNoteSuccess(allNotes));
-
+  fetchAllNotes(){
+     var allNotesBox = Hive.box<NoteModel>(kNotesBox);
+      dataNote = allNotesBox.values.toList();
 }
 }

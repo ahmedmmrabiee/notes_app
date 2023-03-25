@@ -1,5 +1,4 @@
 
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -10,6 +9,7 @@ import 'package:todo_tasks_app/models/note_model.dart';
 
 import '../../shared/components/custom_button.dart';
 import '../../shared/components/custom_text_field.dart';
+import 'colors_list_view.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({Key? key}) : super(key: key);
@@ -19,6 +19,7 @@ class AddNoteForm extends StatefulWidget {
 }
 
 class _AddNoteFormState extends State<AddNoteForm> {
+
   final GlobalKey<FormState> formKey = GlobalKey() ;
 
   String? title, content;
@@ -42,7 +43,9 @@ class _AddNoteFormState extends State<AddNoteForm> {
             onSaved: (value){
               content = value;
             },),
-          const SizedBox(height: 32.0,),
+          const SizedBox(height: 8.0,),
+          const ColorsListView(),
+          const SizedBox(height: 8.0,),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context , state) {
               return CustomButton(
@@ -56,7 +59,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                         title: title!,
                         content: content!,
                         date: dateFormatted,
-                        color: Colors.tealAccent.value);
+                         color: Colors.orangeAccent.value );
                     BlocProvider.of<AddNoteCubit>(context).addNote(adddingNote);
                   }else{
                     autoValidateMode = AutovalidateMode.always;
@@ -74,3 +77,4 @@ class _AddNoteFormState extends State<AddNoteForm> {
     );
   }
 }
+

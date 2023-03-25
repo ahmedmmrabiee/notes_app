@@ -6,6 +6,7 @@ import 'package:todo_tasks_app/views/edit_note_view.dart';
 class NoteItem extends StatelessWidget {
   const NoteItem({Key? key, required this.note}) : super(key: key);
 
+
   final NoteModel note;
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,7 @@ class NoteItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.only(left: 24.0, right: 24.0, top: 24.0, bottom: 24.0,),
         decoration: BoxDecoration(
+         // color: Color(note.color),
           color: Color(note.color),
           borderRadius: BorderRadius.circular(16.0),
 

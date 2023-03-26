@@ -7,8 +7,8 @@ import 'package:todo_tasks_app/cubits/add_note_cubits/add_note_state.dart';
 import 'package:todo_tasks_app/models/note_model.dart';
 
 
-import '../../shared/components/custom_button.dart';
-import '../../shared/components/custom_text_field.dart';
+import '../../../shared/components/custom_button.dart';
+import '../../../shared/components/custom_text_field.dart';
 import 'colors_list_view.dart';
 
 class AddNoteForm extends StatefulWidget {

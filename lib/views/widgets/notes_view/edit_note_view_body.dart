@@ -5,6 +5,7 @@ import 'package:todo_tasks_app/cubits/read_notes_from_hive_cubits/read_notes_cub
 import 'package:todo_tasks_app/models/note_model.dart';
 import 'package:todo_tasks_app/shared/components/custom_app_bar.dart';
 import 'package:todo_tasks_app/shared/components/custom_text_field.dart';
+import 'package:todo_tasks_app/views/widgets/notes_view/edit_note_color.dart';
 
 class EditNoteViewBody extends StatefulWidget {
   const EditNoteViewBody({Key? key, required this.noteEditedBody}) : super(key: key);
@@ -55,7 +56,10 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
                 theContent = value;
               },
               maxLinesNum: 5,),
-
+            const SizedBox(
+              height: 16.0,
+            ),
+             EditNoteColorsListView(theNote: widget.noteEditedBody,),
           ],
         ),
     );
